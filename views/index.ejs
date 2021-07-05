@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="index.css">
+    <title>Dashboard</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js" defer></script>
+    <a href="https://icons8.com/icon/2olGSGqpqGWD/phone"></a>
+   </head>
+<body>
+    <!-- Header -->
+     
+    <header>
+       
+        <h1 style="color:black">Welcome <%= username %></h1>
+        <a href="/signout"><button class="btn btn-danger" id="signOut" title="This will deregister this device and no calls will be received here after.">
+             Sign Out
+        </button></a>
+    </header>
+ 
+    
+    <main>
+        <section id="home">
+            <input type="text" id="connectWith" placeholder="User to call">
+            <small id="call-update"></small>
+            <button id="call">Call</button>    
+        </section>
+
+        <section id="caller">
+            <div id="caller-container">
+                    <img src="https://img.icons8.com/ios/50/26e07f/apple-phone.png"/>
+                <!-- </div> -->
+                <p id="callee"></p>
+                <p id="notice">Please Don't click anywhere or close the browser window.</p>
+            </div>
+        </section>
+
+        <section id="callContainer">
+            <div id="videoContainer">
+                <div id="peers">
+                    <video src="" id="peerVideo" autoplay></video>
+                </div>
+                <div id="local">
+                    <video src="" id="localVideo" muted autoplay></video>
+                </div>
+                <div id="callBtn">
+                    <button id="end">End Call</button>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <section id="ringer-container">
+        <div id="ringer">
+            <h1 id="ringer-name"></h1>
+            <button id="acceptBtn">Accept</button>
+            <button id="rejectBtn">Reject</button>
+            <small id="ringer-warning"></small>
+        </div>
+    </section>
+
+    
+</body>
+</html>
